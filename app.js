@@ -6,6 +6,7 @@ const nav = [
   { link:'/books',name:'Books'},
   { link:'/authors',name:'Authors'},
   { link:'/addbook',name:'Add Book'},
+  { link:'/addauthor',name:'Add Author'},
   { link:'/login',name:'Login'},
   { link:'/signup',name:'Sign Up'}
 ];
@@ -53,4 +54,11 @@ app.get('/addbook',function(req,res){
   });
 });
 
+app.get('/addauthor',function(req,res){
+  res.render('addauthor',
+  {
+    nav,
+    title:'Add Author'
+  });
+});
 app.listen(port,()=>{console.log("Running at port "+port);});
